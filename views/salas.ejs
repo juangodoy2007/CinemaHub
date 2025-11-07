@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= titulo %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/tablas_responsivas.css' />
+  <link rel="icon" href="/images/fav.ico" />
+</head>
+
+<body>
+  <main class="d-flex" style="min-height: 100dvh;">
+    <!-- navegacion -->
+    <header class="d-flex flex-column gap-4 border-end d-none d-md-block" id="menuNav">
+      <div class="sticky-top">
+        <div class="" style="min-height: 25dvh;">
+          <div class="d-flex align-items-center p-4 gap-2 d-none contenido">
+            <div class="d-flex bg-black p-2 rounded-1">
+              <p class="card-title p-1 pe-0 text-light fw-bold">
+                Cinema
+              </p>
+              <p class="card-title p-1 rounded-1 fw-bold" style="background-color: #F69416;">
+                Hub
+              </p>
+            </div>
+          </div>
+          <div class="card-body ps-4 d-none contenido">
+            <h5><strong> Bienvenido </strong>
+              usuario
+            </h5>
+          </div>
+        </div>
+        <ul class="d-flex flex-column list-unstyled ps-2 pe-2">
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/peliculas" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-film"></i>
+              <p class="mb-0 d-none contenido">
+                Peliculas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/funciones" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-masks-theater"></i>
+              <p class="mb-0 d-none contenido">
+                Funciones
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center bg-dark">
+            <a href="/salas" class="text-white w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-person-booth"></i>
+              <p class="mb-0 d-none contenido">
+                Salas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/clientes" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-users"></i>
+              <p class="mb-0 d-none contenido">
+                Clientes
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/ventas" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-money-bill"></i>
+              <p class="mb-0 d-none contenido">
+                Ventas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/productos" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-brands fa-apple"></i>
+              <p class="mb-0 d-none contenido">
+                Productos
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- navegacion -->
+    <header class="w-100 z-1 position-fixed  border-bottom d-md-none bg-body">
+      <div class="p-2 d-flex justify-content-between">
+        <button type="button" class="btn btn-primary" onclick="togleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div class="bg-body border-end border-top d-none p-2" id="menuRes">
+        <div class="d-flex justify-content-center">
+          <div class="d-flex align-items-center p-4 gap-2 d-none contenido">
+            <div class="d-flex bg-black p-2 rounded-1">
+              <p class="card-title p-1 pe-0 text-light fw-bold">
+                Cinema
+              </p>
+              <p class="card-title p-1 rounded-1 fw-bold" style="background-color: #F69416;">
+                Hub
+              </p>
+            </div>
+          </div>
+        </div>
+        <ul class="d-flex flex-column list-unstyled ps-2 pe-2">
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/peliculas" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-film"></i>
+              <p class="mb-0 d-none contenido">
+                Peliculas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/funciones" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-masks-theater"></i>
+              <p class="mb-0 d-none contenido">
+                Funciones
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center bg-dark">
+            <a href="/salas" class="text-white w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-person-booth"></i>
+              <p class="mb-0 d-none contenido">
+                Salas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/clientes" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-users"></i>
+              <p class="mb-0 d-none contenido">
+                Clientes
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/ventas" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-money-bill"></i>
+              <p class="mb-0 d-none contenido">
+                Ventas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/productos" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-brands fa-apple"></i>
+              <p class="mb-0 d-none contenido">
+                Productos
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+
+
+    <% if (status===200) { %>
+      <div class="position-fixed w-100 z-1 d-flex justify-content-center p-4 divContain" id="divContain">
+        <div class="alert alert-success  w-80 w-sm-50 w-md-25 d-flex justify-content-between alerta" id="alerta">
+          <div class="fw-bold">
+            <%= mensaje %>
+          </div>
+          <button type="button" class="btn-close" onclick="cerrarAlerta()"></button>
+        </div>
+      </div>
+      <% } else { %>
+        <div class="position-fixed w-100 z-1 d-flex justify-content-center p-4" id="divContain">
+          <div class="alert alert-danger  w-80 w-sm-50 w-md-25 d-flex justify-content-between alerta" id="alerta">
+            <div class="fw-bold">
+              <%= mensaje %>
+            </div>
+            <button type="button" class="btn-close" onclick="cerrarAlerta()"></button>
+          </div>
+        </div>
+        <% } %>
+
+
+          <div class="w-100">
+            <br>
+            <section class="py-5 text-center container">
+              <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                  <h1 class="fw-light">Gestión de salas</h1>
+                  <p class="lead text-body-secondary">
+                    Bienvenido al panel de administración de salas. Aquí puedes agregar, editar y eliminar salas
+                    de
+                    nuestra base de datos.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 align-items-center justify-content-center">
+                    <button type="button" class="btn btn-primary my-2" data-bs-toggle="modal"
+                      data-bs-target="#agregarModal">
+                      <i class="fa-solid fa-plus"></i> Agregar
+                    </button>
+                    <form action="/salas/busqueda" method="post" id="formBuscar"
+                      class="d-flex align-items-center gap-2">
+                      <div class="d-flex flex-column align-items-start">
+                        <input type="number" class="form-control" name="titulo" id="titulo"
+                          placeholder="Numero de sala" />
+                      </div>
+                      <button class="btn btn-secondary my-2"><i class="fa-solid fa-magnifying-glass"></i>
+                        Buscar</button>
+                    </form>
+                    <div class="w-100">
+                      <form action="/salas" method="get">
+                        <button class="btn btn-outline-primary w-50 my-2">
+                          <i class="fa-solid fa-rotate-right"></i>
+                          Mostar todas
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="py-3">
+              <div class="w-xl-60 w-lg-80 w-90 mx-auto">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 g-3">
+                  <% if(data.length> 0) {%>
+                    <div class="card w-100">
+                      <table class="table table-breakpoint-sm">
+                        <thead>
+                          <tr>
+                            <th scope="col">Numero de sala</th>
+                            <th scope="col">Cant. Asientos</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Acciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% data.forEach(function(sala) { %>
+                            <tr class="border border-start-0 border-end-0">
+                              <td data-columna="Numero de sala">
+                                <%= sala.numero_sala %>
+                              </td>
+                              <td data-columna="Cant. de asientos">
+                                <%= sala.asientos %>
+                              </td>
+                              <td data-columna="Tipo de sala">
+                                <%= sala.tipo_sala %>
+                              </td>
+                              <td>
+                                <div class="btn-group">
+                                  <button type="button" class="btn btn-sm btn-outline-info" data-bs-toggle="modal"
+                                    onclick="editar('<%= JSON.stringify(sala) %>')" data-bs-target="#agregarModal">
+                                    <i class="fa-solid fa-pen-to-square"></i> Editar
+                                  </button>
+                                  <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                    onclick="eliminar('<%= sala.id_sala %>')" data-bs-target="#eliminarModal">
+                                    <i class="fa-solid fa-trash"></i> Eliminar
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                            <% });%>
+                        </tbody>
+                      </table>
+                    </div>
+
+
+                    <% } else {%>
+                      <div class="alert alert-warning w-100 fs-4 fw-bold" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        No hay salas disponibles.
+                      </div>
+                      <% }%>
+                </div>
+              </div>
+            </div>
+          </div>
+  </main>
+
+  <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="eliminarModalLabel"><i class="fa-solid fa-film"></i> Eliminar película</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-body">
+              <form action="/salas/eliminar" id="formEliminar" method="post">
+                <p class="card-title text-center fs-4 p-2">
+                  ¿Desea eliminar esta sala?
+                </p>
+                <div class="mb-3">
+                  <button type="submit" class="btn btn-danger mb-3 w-100">
+                    <i class="fa-solid fa-trash"></i> Eliminar
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary w-100" data-bs-dismiss="modal">
+                    <i class="fa-solid fa-ban"></i>
+                    Cancelar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="agregarModal" tabindex="-1" aria-labelledby="agregarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="agregarModalLabel"><i class="fa-solid fa-film"></i> Agregar película</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Agregar sala</h5>
+              <form action="/salas/crear" method="post" id="formAgregar">
+                <div class="mb-3">
+                  <label for="numero" class="form-label">Numero de sala</label>
+                  <input type="number" min="0" class="form-control" name="numero_sala" id="numero_sala"
+                    placeholder="Numero de la sala" required />
+                </div>
+                <div class="mb-3">
+                  <label for="asientos" class="form-label">Cantidad de asientos</label>
+                  <input type="number" min="0" class="form-control" name="asientos" id="asientos" placeholder="Asientos"
+                    required />
+                </div>
+                <div class="form-floating mb-3">
+                  <select class="form-select" name="tipo_sala" id="tipo_sala">
+                    <option value="" selected></option>
+                    <option value="2D">2D</option>
+                    <option value="3D">3D</option>
+                    <option value="VIP">VIP</option>
+                  </select>
+                  <label for="tipo de sala">Tipo de sala</label>
+                </div>
+                <div class="mb-3">
+                  <button type="submit" id="btnSubmit" class="btn btn-primary mb-3 w-100">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary w-100" data-bs-dismiss="modal"
+                    onclick="limpiar()">
+                    <i class="fa-solid fa-ban"></i>
+                    Cancelar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elemento = document.getElementById("menuNav");
+      // Cuando el mouse entra en el elemento
+      elemento.addEventListener("mouseenter", () => {
+        const navegacion = document.querySelectorAll('.contenido');
+        elemento.classList.add('activo')
+        elemento.classList.remove('inActivo')
+        setTimeout(() => {
+          navegacion.forEach(item => {
+            item.classList.remove('d-none')
+          })
+        }, 100)
+
+      });
+      elemento.addEventListener("mouseleave", () => {
+        const navegacion = document.querySelectorAll('.contenido');
+        elemento.classList.remove('activo')
+        elemento.classList.add('inActivo')
+        setTimeout(() => {
+          navegacion.forEach(item => {
+            item.classList.add('d-none')
+          })
+        }, 100)
+      })
+    });
+
+    let menuAct = false
+
+    function togleMenu() {
+      const menu = document.getElementById('menuRes')
+      if (!menuAct) {
+        menu.classList.remove('menuResIn')
+        menu.classList.add('menuResAct')
+        menu.classList.remove('d-none')
+        const navegacion = document.querySelectorAll('.contenido');
+        setTimeout(() => {
+          navegacion.forEach(item => {
+            item.classList.remove('d-none')
+          })
+        }, 100)
+        menuAct = true
+      } else {
+        menu.classList.remove('menuResAct')
+        menu.classList.add('menuResIn')
+        setTimeout(() => {
+          menu.classList.add('d-none')
+        }, 200)
+        const navegacion = document.querySelectorAll('.contenido');
+        setTimeout(() => {
+          navegacion.forEach(item => {
+            item.classList.add('d-none')
+          })
+        }, 100)
+        menuAct = false
+      }
+    }
+
+    function editar(sala) {
+      sala = JSON.parse(sala);
+      console.log(sala)
+      document.getElementById('formAgregar').action = '/salas/modificar/' + sala.id_sala + '?_method=PUT';
+      document.getElementById('numero_sala').value = sala.numero_sala;
+      document.getElementById('asientos').value = sala.asientos;
+      document.getElementById('tipo_sala').value = sala.tipo_sala;
+
+      const btnSubmit = document.getElementById('btnSubmit');
+      btnSubmit.innerHTML = '<i class="fas fa-edit me-2"></i>Actualizar';
+    }
+
+    const eliminar = (id) => {
+      document.getElementById('formEliminar').action = `/salas/eliminar/${id}?_method=DELETE`;
+    }
+
+    const limpiar = () => {
+      document.getElementById('formAgregar').action = '/sala/crear';
+      document.getElementById('numero_sala').value = '';
+      document.getElementById('asientos').value = '';
+      document.getElementById('tipo_sala').value = '';
+
+      const btnSubmit = document.getElementById('btnSubmit');
+      btnSubmit.innerHTML = '<i class="fas fa-save me-2"></i>Guardar';
+    }
+
+    const cerrarAlerta = () => {
+      const alert = document.getElementById('alerta');
+      alert.classList.remove('alerta');
+      alert.classList.add('alertaSa');
+      setTimeout(() => {
+        document.getElementById('divContain').classList.add('d-none')
+      }, 500);
+
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= titulo %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="icon" href="/images/fav.ico" />
+
+</head>
+
+<body>
+  <main class="d-flex" style="min-height: 100dvh;">
+    <!-- navegacion -->
+    <header class="d-flex flex-column gap-4 border-end d-none d-md-block" id="menuNav">
+      <div class="sticky-top">
+        <div class="" style="min-height: 25dvh;">
+          <div class="d-flex align-items-center p-4 gap-2 d-none contenido">
+            <div class="d-flex bg-black p-2 rounded-1">
+              <p class="card-title p-1 pe-0 text-light fw-bold">
+                Cinema
+              </p>
+              <p class="card-title p-1 rounded-1 fw-bold" style="background-color: #F69416;">
+                Hub
+              </p>
+            </div>
+          </div>
+          <div class="card-body ps-4 d-none contenido">
+            <h5><strong> Bienvenido </strong>
+              usuario
+            </h5>
+          </div>
+        </div>
+        <ul class="d-flex flex-column list-unstyled ps-2 pe-2">
+          <li class="d-flex align-items-center justify-content-center bg-dark">
+            <a href="/peliculas" class="text-white w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-film"></i>
+              <p class="mb-0 d-none contenido">
+                Peliculas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/funciones" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-masks-theater"></i>
+              <p class="mb-0 d-none contenido">
+                Funciones
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/salas" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-person-booth"></i>
+              <p class="mb-0 d-none contenido">
+                Salas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/clientes" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-users"></i>
+              <p class="mb-0 d-none contenido">
+                Clientes
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/ventas" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-money-bill"></i>
+              <p class="mb-0 d-none contenido">
+                Ventas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/productos" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-brands fa-apple"></i>
+              <p class="mb-0 d-none contenido">
+                Productos
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- navegacion -->
+    <header class="w-100 z-1 position-fixed  border-bottom d-md-none bg-body">
+      <div class="p-2 d-flex justify-content-between">
+        <button type="button" class="btn btn-primary" onclick="togleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div class="bg-body border-end border-top d-none p-2" id="menuRes">
+        <div class="d-flex justify-content-center">
+          <div class="d-flex align-items-center p-4 gap-2 d-none contenido">
+            <div class="d-flex bg-black p-2 rounded-1">
+              <p class="card-title p-1 pe-0 text-light fw-bold">
+                Cinema
+              </p>
+              <p class="card-title p-1 rounded-1 fw-bold" style="background-color: #F69416;">
+                Hub
+              </p>
+            </div>
+          </div>
+        </div>
+        <ul class="d-flex flex-column list-unstyled ps-2 pe-2">
+          <li class="d-flex align-items-center justify-content-center bg-dark">
+            <a href="/peliculas" class="text-white w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-film"></i>
+              <p class="mb-0 d-none contenido">
+                Peliculas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/funciones" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-masks-theater"></i>
+              <p class="mb-0 d-none contenido">
+                Funciones
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/salas" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-person-booth"></i>
+              <p class="mb-0 d-none contenido">
+                Salas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/clientes" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-users"></i>
+              <p class="mb-0 d-none contenido">
+                Clientes
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/ventas" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-solid fa-money-bill"></i>
+              <p class="mb-0 d-none contenido">
+                Ventas
+              </p>
+            </a>
+          </li>
+          <li class="d-flex align-items-center justify-content-center">
+            <a href="/productos" class="text-body w-100 p-2 d-flex gap-2 align-items-center list-group-item fs-5">
+              <i class="fa-brands fa-apple"></i>
+              <p class="mb-0 d-none contenido">
+                Productos
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+
+
+    <% if (status===200) { %>
+      <div class="position-fixed w-100 z-1 d-flex justify-content-center p-4 divContain" id="divContain">
+        <div class="alert alert-success  w-80 w-sm-50 w-md-25 d-flex justify-content-between alerta" id="alerta">
+          <div class="fw-bold">
+            <%= mensaje %>
+          </div>
+          <button type="button" class="btn-close" onclick="cerrarAlerta()"></button>
+        </div>
+      </div>
+      <% } else { %>
+        <div class="position-fixed w-100 z-1 d-flex justify-content-center p-4" id="divContain">
+          <div class="alert alert-danger  w-80 w-sm-50 w-md-25 d-flex justify-content-between alerta" id="alerta">
+            <div class="fw-bold">
+              <%= mensaje %>
+            </div>
+            <button type="button" class="btn-close" onclick="cerrarAlerta()"></button>
+          </div>
+        </div>
+        <% } %>
+
+
+          <div class="w-100">
+            <br>
+            <section class="py-5 text-center container">
+              <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                  <h1 class="fw-light">Gestión de películas</h1>
+                  <p class="lead text-body-secondary">
+                    Bienvenido al panel de administración de películas. Aquí puedes agregar, editar y eliminar películas
+                    de
+                    nuestra base de datos.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2 align-items-center justify-content-center">
+                    <button type="button" class="btn btn-primary my-2" data-bs-toggle="modal"
+                      data-bs-target="#agregarModal">
+                      <i class="fa-solid fa-plus"></i> Agregar
+                    </button>
+                    <form action="/peliculas/busqueda" method="post" id="formBuscar"
+                      class="d-flex align-items-center gap-2">
+                      <div class="d-flex flex-column align-items-start">
+                        <input type="text" class="form-control" name="titulo_bu" id="titulo_bu"
+                          placeholder="Titulo de película" />
+                      </div>
+                      <button class="btn btn-secondary my-2"><i class="fa-solid fa-magnifying-glass"></i>
+                        Buscar</button>
+                    </form>
+                    <div class="w-100">
+                      <form action="/peliculas" method="get">
+                        <button class="btn btn-outline-primary w-50 my-2">
+                          <i class="fa-solid fa-rotate-right"></i>
+                          Mostar todas
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="p-2 bg-body-tertiary ">
+              <div class="w-100 d-flex justify-content-center">
+                <div class="d-flex flex-wrap w-100 w-xl-80">
+                  <% if(data.length> 0) {%>
+                    <% data.forEach(function(peli) { const hora=parseFloat(peli.duracion_minutos) / 60 %>
+                      <div class="p-2 w-100 w-md-50">
+                        <div class="card">
+                          <div class="d-flex justify-content-center align-items-center flex-column flex-lg-row p-2 gap-2 gap-lg-0">
+                            <div class="w-100 w-lg-40 w-xl-30">
+                              <img src="/uploads/<%= peli.cartelera %>" width="100%" class="rounded-4"
+                                alt="Cartelera de <%= peli.titulo %>" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            </div>
+
+                            <div class="card-body p-1 p-md-4 w-100 w-lg-60 w-xl-70">
+                              <p class="card-title fs-6 fw-bold">
+                                <i class="fa-solid fa-film"></i>
+                                <%= peli.titulo %>
+                              </p>
+                              <div class="card-text d-flex gap-2 ">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <p class="scroll-container">
+                                  <%= peli.sinopsis %>
+                                </p>
+                              </div>
+                              <div class="card-text d-flex gap-2">
+                                <i class="fa-solid fa-calendar"></i>
+                                <p>
+                                  <%= new Date(peli.fecha_estreno).toLocaleDateString() %>
+                                </p>
+                              </div>
+                              <div class="d-flex gap-2 mb-2 align-items-center">
+                                <i class="fa-solid fa-icons"></i>
+                                <div class="card-text pt-1 pb-1 ps-2 pe-2 rounded-5 bg-warning">
+                                  <%= peli.genero %>
+                                </div>
+                              </div>
+                              <div class="card-text d-flex gap-2">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>
+                                  <%= hora %> h
+                                </p>
+                              </div>
+                              <div class="card-text d-flex gap-2">
+                                <i class="fa-solid fa-list"></i>
+                                <p>
+                                  <strong>Clasificación:</strong>
+                                  <%= peli.clasificacion %>
+                                </p>
+                              </div>
+
+                              <div class="card-footer">
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-info" data-bs-toggle="modal"
+                                      onclick="editar('<%= JSON.stringify(peli) %>')" data-bs-target="#agregarModal">
+                                      <i class="fa-solid fa-pen-to-square"></i> Editar
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                      onclick="eliminar('<%= peli.id_pelicula %>')" data-bs-target="#eliminarModal">
+                                      <i class="fa-solid fa-trash"></i> Eliminar
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <% });%>
+                        <% } else {%>
+                          <div class="alert alert-warning w-100 fs-4 fw-bold" role="alert">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            No hay películas disponibles.
+                          </div>
+                          <% }%>
+                </div>
+              </div>
+            </div>
+          </div>
+  </main>
+
+  <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="eliminarModalLabel"><i class="fa-solid fa-film"></i> Eliminar película</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-body">
+              <form action="/peliculas/eliminar" id="formEliminar" method="post">
+                <p class="card-title text-center fs-4 p-2">
+                  ¿Desea eliminar esta pelicula?
+                </p>
+                <div class="mb-3">
+                  <button type="submit" class="btn btn-danger mb-3 w-100">
+                    <i class="fa-solid fa-trash"></i> Eliminar
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary w-100" data-bs-dismiss="modal">
+                    <i class="fa-solid fa-ban"></i>
+                    Cancelar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="agregarModal" tabindex="-1" aria-labelledby="agregarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="agregarModalLabel"><i class="fa-solid fa-film"></i> Agregar película</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Formulario</h5>
+              <form action="/peliculas/crear" enctype="multipart/form-data" method="post" id="formAgregar">
+                <div class="mb-3">
+                  <label for="titulo" class="form-label">Titulo</label>
+                  <input type="text" class="form-control" name="titulo" id="titulo_pe"
+                    placeholder="Titulo de la película" required />
+                </div>
+                <div class="mb-3">
+                  <label for="sinopsis" class="form-label">Sinopsis</label>
+                  <textarea class="form-control" name="sinopsis" id="sinopsis" rows="3"
+                    placeholder="Breve resumen de la película" required></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="duracion_minutos" class="form-label">Duración</label>
+                  <input type="number" min="0" class="form-control" name="duracion_minutos" id="duracion_minutos"
+                    placeholder="Duración" required />
+                </div>
+                <div class="mb-3">
+                  <label for="genero" class="form-label">Genero</label>
+                  <input type="text" class="form-control" name="genero" id="genero" placeholder="Genero de la película"
+                    required />
+                </div>
+                <div class="form-floating mb-3">
+                  <select class="form-select" name="clasificacion" id="clasificacion">
+                    <option value="" selected></option>
+                    <option value="G (Público General)">G (Público General)</option>
+                    <option value="PG (Se Sugiere Orientación Paternal)">PG (Se Sugiere Orientación Paternal)</option>
+                    <option value="PG-13 (Advertencia Paternal Estricta)">PG-13 (Advertencia Paternal Estricta)</option>
+                    <option value="R (Restringida)">R (Restringida)</option>
+                    <option value="NC-17 (Solo Adultos)">NC-17 (Solo Adultos)</option>
+                  </select>
+                  <label for="clasificacion">Clasificacion de la película</label>
+                </div>
+                <div class="mb-3">
+                  <label for="fecha_estreno" class="form-label">Fecha de estreno</label>
+                  <input type="date" class="form-control" name="fecha_estreno" id="fecha_estreno"
+                    placeholder="Fecha de estreno de la película" required />
+                </div>
+                <div class="mb-3 d-flex flex-column">
+                  <label for="cartelera" class="form-label">Cartelera</label>
+                  <input type="file" class="form-control-file" name="cartelera" id="cartelera" accept="image/" required />
+                  <div id="resultado" style="margin-top: 10px; padding: 10px; border-radius: 5px;"></div>
+
+                </div>
+                <div class="mb-3">
+                  <button type="submit" id="btnSubmit" class="btn btn-primary mb-3 w-100">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardar
+                  </button>
+                  <button type="button" class="btn btn-outline-secondary w-100" data-bs-dismiss="modal"
+                    onclick="limpiar()">
+                    <i class="fa-solid fa-ban"></i>
+                    Cancelar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elemento = document.getElementById("menuNav");
+      // Cuando el mouse entra en el elemento
+      elemento.addEventListener("mouseenter", () => {
+        const navegacion = document.querySelectorAll('.contenido');
+        elemento.classList.add('activo')
+        elemento.classList.remove('inActivo')
+        setTimeout(() => {
+          navegacion.forEach(item => {
+            item.classList.remove('d-none')
+          })
+        }, 100)
+
+      });
+      elemento.addEventListener("mouseleave", () => {
+        const navegacion = document.querySelectorAll('.contenido');
+        elemento.classList.remove('activo')
+        elemento.classList.add('inActivo')
+        setTimeout(() => {
+          navegacion.forEach(item => {
+            item.classList.add('d-none')
+          })
+        }, 100)
+      })
+    });
+
+
+    document.getElementById('cartelera').addEventListener('change', function (e) {
+      const archivo = e.target.files[0];
+      const resultadoDiv = document.getElementById('resultado');
+
+      if (!archivo) {
+        resultadoDiv.innerHTML = '<p style="color: #666;">No se seleccionó ningún archivo</p>';
+        return;
+      }
+
+      // Verificar que sea una imagen
+      if (!archivo.type.startsWith('image/')) {
+        resultadoDiv.innerHTML = '<p style="color: red;">❌ El archivo no es una imagen</p>';
+        return;
+      }
+
+      const img = new Image();
+      const url = URL.createObjectURL(archivo);
+
+      img.onload = function () {
+        URL.revokeObjectURL(url);
+
+        const ancho = img.width;
+        const alto = img.height;
+        const aspectRatio = ancho / alto;
+
+        // Parámetros para cartelera
+        const MIN_ANCHO = 900;
+        const MIN_ALTO = 1200;
+
+        let esAdecuada = true;
+        let problemas = [];
+
+        // Validaciones
+        if (ancho < MIN_ANCHO) {
+          esAdecuada = false;
+          problemas.push(`Ancho insuficiente (${ancho}px < ${MIN_ANCHO}px mínimo)`);
+        }
+
+        if (alto < MIN_ALTO) {
+          esAdecuada = false;
+          problemas.push(`Alto insuficiente (${alto}px < ${MIN_ALTO}px mínimo)`);
+        }
+
+        // Mostrar resultado
+        if (esAdecuada) {
+          document.getElementById('btnSubmit').removeAttribute('disabled')
+          resultadoDiv.innerHTML = ``
+        } else {
+          document.getElementById('btnSubmit').setAttribute('disabled', true)
+          resultadoDiv.innerHTML = `
+                <div style="color: #856404; background: #fff3cd; padding: 15px; border: 1px solid #ffeaa7; border-radius: 5px;">
+                    <h3 style="margin: 0 0 10px 0;">❌ Problemas encontrados</h3>
+                    <p style="margin: 5px 0;"><strong>Dimensiones:</strong> ${ancho} × ${alto} px</p>
+                    <p style="margin: 5px 0;"><strong>Aspect Ratio:</strong> ${aspectRatio.toFixed(2)}</p>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        ${problemas.map(problema => `<li>${problema}</li>`).join('')}
+                    </ul>
+                    <p style="margin: 10px 0 0 0; font-size: 14px;"><strong>Requisitos mínimos:</strong> 1000 × 1400 px, Aspect Ratio: 1.4 - 1.6</p>
+                </div>
+            `;
+        }
+      };
+
+      img.onerror = function () {
+        URL.revokeObjectURL(url);
+        resultadoDiv.innerHTML = '<p style="color: red;">❌ Error al cargar la imagen</p>';
+      };
+
+      img.src = url;
+    });
+
+    let menuAct = false
+
+    function togleMenu() {
+      const menu = document.getElementById('menuRes')
+      if (!menuAct) {
+        menu.classList.remove('menuResIn')
+        menu.classList.add('menuResAct')
+        menu.classList.remove('d-none')
+        const navegacion = document.querySelectorAll('.contenido');
+        setTimeout(() => {
+          navegacion.forEach(item => {
+            item.classList.remove('d-none')
+          })
+        }, 100)
+        menuAct = true
+      } else {
+        menu.classList.remove('menuResAct')
+        menu.classList.add('menuResIn')
+        setTimeout(() => {
+          menu.classList.add('d-none')
+        }, 200)
+        const navegacion = document.querySelectorAll('.contenido');
+        setTimeout(() => {
+          navegacion.forEach(item => {
+            item.classList.add('d-none')
+          })
+        }, 100)
+        menuAct = false
+      }
+    }
+
+    function editar(pelicula) {
+      pelicula = JSON.parse(pelicula);
+      console.log(pelicula)
+      document.getElementById('formAgregar').action = '/peliculas/modificar/' + pelicula.id_pelicula + '?_method=PUT';
+      document.getElementById('titulo_pe').value = pelicula.titulo;
+      document.getElementById('sinopsis').value = pelicula.sinopsis;
+      document.getElementById('duracion_minutos').value = pelicula.duracion_minutos;
+      document.getElementById('genero').value = pelicula.genero;
+      document.getElementById('clasificacion').value = pelicula.clasificacion;
+      document.getElementById('fecha_estreno').value = pelicula.fecha_estreno.split('T')[0]
+      document.getElementById('cartelera').removeAttribute('required')
+
+      const btnSubmit = document.getElementById('btnSubmit');
+      btnSubmit.innerHTML = '<i class="fas fa-edit me-2"></i>Actualizar Película';
+    }
+
+    const eliminar = (id) => {
+      document.getElementById('formEliminar').action = `/peliculas/eliminar/${id}?_method=DELETE`;
+    }
+
+    const limpiar = () => {
+      document.getElementById('formAgregar').action = '/peliculas/crear';
+      document.getElementById('titulo_pe').value = '';
+      document.getElementById('sinopsis').value = '';
+      document.getElementById('duracion_minutos').value = '';
+      document.getElementById('genero').value = '';
+      document.getElementById('clasificacion').value = '';
+      document.getElementById('fecha_estreno').value = '';
+      document.getElementById('cartelera').setAttribute('required', true)
+      document.getElementById('cartelera').value = null
+
+      const btnSubmit = document.getElementById('btnSubmit');
+      btnSubmit.innerHTML = '<i class="fas fa-save me-2"></i>Guardar Película';
+    }
+
+    const cerrarAlerta = () => {
+      const alert = document.getElementById('alerta');
+      alert.classList.remove('alerta');
+      alert.classList.add('alertaSa');
+      setTimeout(() => {
+        document.getElementById('divContain').classList.add('d-none')
+      }, 500);
+
+    }
+  </script>
+
+</body>
+
+</html>
